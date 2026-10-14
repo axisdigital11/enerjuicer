@@ -136,6 +136,34 @@
   footer a:hover{color:#fff}
   footer .legal{flex-basis:100%;font-size:12px;opacity:.6;text-decoration:underline;text-underline-offset:3px;margin-top:4px}
 
+
+  /* שאלת שם לפני הוואטסאפ */
+  dialog.ask{
+    border:0;padding:0;background:transparent;color:#10241a;
+    width:min(100% - 32px,440px);margin:auto;
+  }
+  dialog.ask::backdrop{background:rgba(5,14,8,.66);backdrop-filter:blur(3px)}
+  .ask form{background:#fff;border-radius:22px;padding:26px 22px 22px;box-shadow:0 24px 70px rgba(0,0,0,.5);position:relative}
+  .ask h2{font-size:23px;font-weight:800;line-height:1.25;margin-bottom:6px}
+  .ask p{font-size:16px;color:#47564d;margin-bottom:16px}
+  .ask label{display:block;font-weight:700;font-size:15px;margin:12px 0 6px}
+  .ask input{
+    width:100%;font:inherit;font-size:18px;padding:14px 16px;border-radius:12px;
+    border:2px solid #d3ddd6;background:#f8fbf9;color:#10241a;
+  }
+  .ask input:focus{outline:none;border-color:var(--leaf);background:#fff}
+  .ask input[type=tel]{direction:ltr;text-align:right}
+  .ask .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .ask .go{
+    margin-top:18px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px;border:0;border-radius:999px;background:var(--wa);color:#fff;
+    font:inherit;font-weight:800;font-size:20px;cursor:pointer;
+  }
+  .ask .go:hover{background:var(--wa-dark)}
+  .ask .go:focus-visible,.ask .x:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+  .ask .x{position:absolute;top:10px;left:10px;width:36px;height:36px;border:0;border-radius:50%;background:#eef3ef;color:#33433a;font-size:22px;line-height:1;cursor:pointer}
+  .ask .err{color:#b3261e;font-size:14px;font-weight:600;margin-top:8px;min-height:1em}
+
   @media (min-width:768px){
     .hero{
       background-image:url("img/hero-wide.jpg");
@@ -203,6 +231,23 @@
   <a class="legal" href="https://sites.google.com/view/enerjuicer-tlv/privacy-policy" target="_blank" rel="noopener">מדיניות פרטיות</a>
 </footer>
 
+<dialog class="ask" id="ask" aria-labelledby="ask-title">
+  <form method="dialog" id="ask-form" novalidate>
+    <button type="button" class="x" id="ask-close" aria-label="סגירה">×</button>
+    <h2 id="ask-title">איך קוראים לך?</h2>
+    <p>כדי שנדע עם מי אנחנו מדברים כשההודעה מגיעה.</p>
+    <label for="ask-name">שם</label>
+    <input id="ask-name" name="name" type="text" autocomplete="given-name" maxlength="60" required>
+    <div id="ask-phone-row" hidden>
+      <label for="ask-phone">טלפון</label>
+      <input id="ask-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20">
+    </div>
+    <input class="hp" type="text" name="website" id="ask-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="err" id="ask-err" role="alert"></div>
+    <button type="submit" class="go">המשך לוואטסאפ</button>
+  </form>
+</dialog>
+
 <script>
   // LinkedIn Insight Tag. Fill in the Partner ID to switch the tag on (Campaign Manager > Analyze > Insight Tag).
   var LI_PARTNER_ID = "11132201";
@@ -220,8 +265,82 @@
       s.parentNode.insertBefore(b, s);
     })(window.lintrk);
   }
-  document.getElementById("wa").addEventListener("click", function () {
-    try { if (window.lintrk) window.lintrk("track", { conversion_id: LI_CONVERSION_ID }); } catch (e) {}
+
+  // ---- שאלת שם לפני הוואטסאפ + רישום ב-CRM ----
+  var WA_PHONE = "97236018282";
+  var SOURCE = "לינקדאין";                 // מה שנכתב בהודעה וב-CRM
+  var CRM_BASE = "https://crm.axisdigital.co.il/api/public/forms/";
+  var CRM_FORM_KEY = "";                   // מפתח הטופס "ליד מלינקדאין" מה-CRM של אנרג'וסר (/f/<המפתח>)
+
+  var wa = document.getElementById("wa");
+  var dlg = document.getElementById("ask");
+  var form = document.getElementById("ask-form");
+  var nameEl = document.getElementById("ask-name");
+  var phoneEl = document.getElementById("ask-phone");
+  var errEl = document.getElementById("ask-err");
+  var crmFields = null;                    // { name: key, phone: key } לפי הגדרת הטופס ב-CRM
+  var CAN_DIALOG = dlg && typeof dlg.showModal === "function";
+
+  function fromCookie(n) {
+    var m = document.cookie.match(new RegExp("(?:^|; )" + n + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : "";
+  }
+  // מזהה הקליק של לינקדאין, לשליחת סיגנל "נשלחה הודעה" בחזרה
+  function clickParams() {
+    var q = new URLSearchParams(location.search), out = {};
+    ["li_fat_id", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach(function (k) {
+      var v = q.get(k); if (v) out[k] = v;
+    });
+    if (!out.li_fat_id) { var c = fromCookie("li_fat_id"); if (c) out.li_fat_id = c; }
+    return out;
+  }
+  function loadCrmFields() {
+    if (!CRM_FORM_KEY || crmFields) return;
+    fetch(CRM_BASE + CRM_FORM_KEY).then(function (r) { return r.ok ? r.json() : null; }).then(function (cfg) {
+      if (!cfg || !cfg.fields) return;
+      var f = {};
+      cfg.fields.forEach(function (x) { if ((x.type === "name" || x.type === "phone") && !f[x.type]) f[x.type] = x.key; });
+      if (f.name && f.phone) { crmFields = f; document.getElementById("ask-phone-row").hidden = false; }
+    }).catch(function () {});
+  }
+  function sendToCrm(name, phone) {
+    if (!CRM_FORM_KEY || !crmFields || !phone) return;
+    var values = {}; values[crmFields.name] = name; values[crmFields.phone] = phone;
+    try {
+      fetch(CRM_BASE + CRM_FORM_KEY + "/submit", {
+        method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ values: values, website: "", context: { pageUrl: location.href, params: clickParams() } })
+      }).catch(function () {});
+    } catch (e) {}
+  }
+  function goWhatsapp(name) {
+    var text = "היי, אני " + name + ". הגעתי מ" + SOURCE + " ואני רוצה לקבל פרטים.";
+    var url = "https://api.whatsapp.com/send/?phone=" + WA_PHONE + "&text=" + encodeURIComponent(text) + "&type=phone_number&app_absent=0";
+    if (!window.open(url, "_blank", "noopener")) location.href = url;
+  }
+
+  wa.addEventListener("click", function (e) {
+    if (!CAN_DIALOG) {                      // דפדפן ישן: ההתנהגות הקודמת, בלי שאלה
+      try { if (window.lintrk) window.lintrk("track", { conversion_id: LI_CONVERSION_ID }); } catch (x) {}
+      return;
+    }
+    e.preventDefault(); loadCrmFields(); errEl.textContent = "";
+    dlg.showModal(); nameEl.focus();
+  });
+  document.getElementById("ask-close").addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (document.getElementById("ask-hp").value) return;       // בוט
+    var name = nameEl.value.trim().replace(/\s+/g, " ");
+    if (name.length < 2) { errEl.textContent = "נא לכתוב שם"; nameEl.focus(); return; }
+    var phone = phoneEl.value.trim();
+    if (crmFields && !/^[0-9+\-\s()]{9,16}$/.test(phone)) { errEl.textContent = "נא לכתוב מספר טלפון תקין"; phoneEl.focus(); return; }
+    try { if (window.lintrk) window.lintrk("track", { conversion_id: LI_CONVERSION_ID }); } catch (x) {}
+    sendToCrm(name, phone);
+    goWhatsapp(name);
+    dlg.close();
   });
 </script>
 <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=11132201&fmt=gif"></noscript>
