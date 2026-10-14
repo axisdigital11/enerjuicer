@@ -203,5 +203,26 @@
   <a class="legal" href="https://sites.google.com/view/enerjuicer-tlv/privacy-policy" target="_blank" rel="noopener">מדיניות פרטיות</a>
 </footer>
 
+<script>
+  // LinkedIn Insight Tag. Fill in the Partner ID to switch the tag on (Campaign Manager > Analyze > Insight Tag).
+  var LI_PARTNER_ID = "";
+  var LI_CONVERSION_ID = 31911553; // "ליד - לחיצה על כפתור וואטסאפ במיניסייט"
+  if (LI_PARTNER_ID) {
+    window._linkedin_partner_id = LI_PARTNER_ID;
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(LI_PARTNER_ID);
+    (function (l) {
+      if (!l) { window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); }; window.lintrk.q = []; }
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript"; b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+  }
+  document.getElementById("wa").addEventListener("click", function () {
+    try { if (window.lintrk) window.lintrk("track", { conversion_id: LI_CONVERSION_ID }); } catch (e) {}
+  });
+</script>
 </body>
 </html>
