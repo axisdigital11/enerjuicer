@@ -56,37 +56,39 @@
 
   <main id="main">
     <section class="stage" id="top" aria-label="הכירו את אנרג'וסר">
-      <div class="stage-pin" id="stagePin" style="--bgc:#8a3fd1">
-        <div class="media" aria-hidden="true">
-          <video id="master" class="cv" muted playsinline preload="auto" poster="assets/still/s1.jpg" src="video/master.mp4"></video>
-          <span class="still-data" data-bg="#8a3fd1" data-ink="#fff"></span>
-          <span class="still-data" data-bg="#ff7a9c" data-ink="#fff"></span>
-          <span class="still-data" data-bg="#ffa21f" data-ink="#fff"></span>
-          <span class="still-data" data-bg="#6cc24a" data-ink="#fff"></span>
-          <span class="still-data" data-bg="#ffd23f" data-ink="#14251e"></span>
-        </div>
-        <div class="scene-ui on" data-i="0" style="--ink:#fff">
-          <div class="scene-top"><h1 class="kicker">רוצה לסגור אירוע חברה שאי אפשר לפספס?</h1><p class="sub">אסאי, שייקים, מיצים וכוסות פירות. אנחנו מגיעים, פורסים ומפנים.</p></div>
-          <div class="scard"><b>קערת אסאי</b><span>מ־20 ₪</span><a class="card-btn" data-label="קערת אסאי" href="#contact">להזמנה</a></div>
-        </div>
-        <div class="scene-ui" data-i="1" style="--ink:#fff">
-          <div class="scene-top"><h2 class="kicker">שייקים טריים</h2><p class="sub">טעמים וצבעים שפשוט כיף לשתות</p></div>
-          <div class="scard"><b>שייקים טריים</b><span>מ־16 ₪</span><a class="card-btn" data-label="שייקים טריים" href="#contact">להזמנה</a></div>
-        </div>
-        <div class="scene-ui" data-i="2" style="--ink:#fff">
-          <div class="scene-top"><h2 class="kicker">מיצים סחוטים</h2><p class="sub">שילובים מרעננים של פירות וירקות</p></div>
-          <div class="scard"><b>מיצים סחוטים</b><span>מ־16 ₪</span><a class="card-btn" data-label="מיצים סחוטים" href="#contact">להזמנה</a></div>
-        </div>
-        <div class="scene-ui" data-i="3" style="--ink:#fff">
-          <div class="scene-top"><h2 class="kicker">מיצים ירוקים</h2><p class="sub">קיווי, תפוח, נענע וג'ינג'ר</p></div>
-          <div class="scard"><b>מיצים ירוקים</b><span>מ־16 ₪</span><a class="card-btn" data-label="מיצים ירוקים" href="#contact">להזמנה</a></div>
-        </div>
-        <div class="scene-ui" data-i="4" style="--ink:#14251e">
-          <div class="scene-top"><h2 class="kicker">כוסות ומגשי פירות</h2><p class="sub">כוסות אישיות ומגשים מרהיבים</p></div>
-          <div class="scard"><b>כוסות ומגשי פירות</b><span>מ־12 ₪</span><a class="card-btn" data-label="כוסות ומגשי פירות" href="#contact">להזמנה</a></div>
-        </div>
+      <div class="stage-pin" id="stagePin">
+        <article class="slide" data-i="0" data-ink="#fff" style="--bg:#8A3FD1;--word:#4f2085;--ink:#fff">
+          <div class="s-word" lang="en" aria-hidden="true">AÇAÍ<span>WOW!</span></div>
+          <img class="s-prod" src="assets/hero/h1.webp" alt="קערת אסאי עם בננה, תותים, אוכמניות וגרנולה" width="2508" height="2508" decoding="async" fetchpriority="high">
+          <div class="s-copy"><span class="s-label">01 / THE PURPLE MOMENT</span><h1>זה לא עוד<br><em>יום במשרד.</em></h1><p>זו ההפסקה שכולם ירצו להאריך.</p><a class="s-link" href="#contact">בואו נעשה מזה אירוע <span>↖</span></a></div>
+          <div class="s-card"><b>קערות אסאי</b><p>אסאי עשיר עם פירות טריים, גרנולה וכל הדברים הטובים.</p><div><span>החל מ־20 ₪</span><a href="#menu" aria-label="עוד על קערות אסאי">↗</a></div></div>
+        </article>
+        <article class="slide" data-i="1" data-ink="#fff" style="--bg:#FF7A9C;--word:#c63d62;--ink:#fff">
+          <div class="s-word" lang="en" aria-hidden="true">BERRY<span>HAPPY!</span></div>
+          <img class="s-prod" src="assets/hero/h2.webp" alt="שייק ורוד עם תותים ונתזי שייק באוויר" width="2508" height="2508" decoding="async">
+          <div class="s-copy"><span class="s-label">02 / THE HAPPY SIP</span><h2>יש מיצים.<br><em>ויש אנרג'וסר.</em></h2><p>טעמים שמקפיצים את האווירה בשנייה.</p><a class="s-link" href="#contact">מתכננים Happy Hour <span>↖</span></a></div>
+          <div class="s-card"><b>שייק פירות יער</b><p>מתוק, קר ומרענן, מוגש בדיוק לרגע הנכון.</p><div><span>החל מ־16 ₪</span><a href="#menu" aria-label="עוד על שייק פירות יער">↗</a></div></div>
+        </article>
+        <article class="slide" data-i="2" data-ink="#fff" style="--bg:#FFA21F;--word:#bd6900;--ink:#fff">
+          <div class="s-word" lang="en" aria-hidden="true">FRESH<span>START!</span></div>
+          <img class="s-prod" src="assets/hero/h3.webp" alt="בקבוק מיץ תפוזים עם פלחי תפוז ונתזי מיץ" width="2508" height="2508" decoding="async">
+          <div class="s-copy"><span class="s-label">03 / THE BRIGHT SIDE</span><h2>קצת שמש.<br><em>הרבה אנרגיה.</em></h2><p>מיצים טבעיים שפותחים את היום בחיוך.</p><a class="s-link" href="#contact">מרעננים את המשרד <span>↖</span></a></div>
+          <div class="s-card"><b>מיץ תפוזים סחוט</b><p>שילובים צבעוניים של פירות, בבקבוק אישי.</p><div><span>החל מ־16 ₪</span><a href="#menu" aria-label="עוד על מיץ תפוזים סחוט">↗</a></div></div>
+        </article>
+        <article class="slide" data-i="3" data-ink="#fff" style="--bg:#6CC24A;--word:#398b34;--ink:#fff">
+          <div class="s-word" lang="en" aria-hidden="true">GO<span>GREEN!</span></div>
+          <img class="s-prod" src="assets/hero/h4.webp" alt="בקבוק מיץ ירוק עם קיווי, תפוח, נענע וג'ינג'ר" width="2508" height="2508" decoding="async">
+          <div class="s-copy"><span class="s-label">04 / THE GREEN ENERGY</span><h2>הפסקה ירוקה.<br><em>אנרגיה חדשה.</em></h2><p>טבעי, מרענן ופשוט כיף.</p><a class="s-link" href="#contact">מכניסים רעננות לצוות <span>↖</span></a></div>
+          <div class="s-card"><b>מיץ ירוק</b><p>קיווי, תפוח, נענע וג'ינג'ר, בצבע שעושה חשק לעוד.</p><div><span>החל מ־16 ₪</span><a href="#menu" aria-label="עוד על מיץ ירוק">↗</a></div></div>
+        </article>
+        <article class="slide" data-i="4" data-ink="#fff" style="--bg:#49C9AC;--word:#168E76;--ink:#fff">
+          <div class="s-word" lang="en" aria-hidden="true">MUESLI<span>MAGIC!</span></div>
+          <img class="s-prod" src="assets/hero/h6.webp" alt="קערת מוזלי עם יוגורט, גרנולה ופירות" width="2508" height="2508" decoding="async">
+          <div class="s-copy"><span class="s-label">05 / THE MORNING MAGIC</span><h2>בוקר טוב.<br><em>ברמה אחרת.</em></h2><p>יוגורט, גרנולה, פירות טריים — והרבה מצב רוח טוב.</p><a class="s-link" href="#contact">בואו לפתוח יום ביחד <span>↖</span></a></div>
+          <div class="s-card"><b>קערות מוזלי</b><p>יוגורט קרמי, גרנולה פריכה ופירות טריים בכל ביס.</p><div><span>החל מ־20 ₪</span><a href="#menu" aria-label="עוד על קערות מוזלי">↗</a></div></div>
+        </article>
         <button class="arrow" id="stageNext" aria-label="הטעם הבא">&#8249;</button>
-        <ol class="dots" id="dots" aria-label="בחירת טעם"><li><button aria-label="אסאי" class="on"></button></li><li><button aria-label="שייק"></button></li><li><button aria-label="מיץ"></button></li><li><button aria-label="ירוק"></button></li><li><button aria-label="פירות"></button></li></ol>
+        <ol class="dots" id="dots" aria-label="בחירת טעם"><li><button aria-label="אסאי"></button></li><li><button aria-label="שייק"></button></li><li><button aria-label="תפוזים"></button></li><li><button aria-label="ירוק"></button></li><li><button aria-label="מוזלי"></button></li></ol>
         <div class="scrollhint" id="hint" aria-hidden="true"><i></i>גללו</div>
       </div>
     </section>
