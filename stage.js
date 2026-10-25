@@ -1,6 +1,7 @@
 /* Hero: layered flavor slides that drop in from above as you scroll (depth via per-layer parallax). */
 (function () {
   'use strict';
+  try { history.scrollRestoration = 'manual'; } catch (e) {}
   function boot() {
     if (!window.gsap || !window.ScrollTrigger) { return setTimeout(boot, 60); }
     gsap.registerPlugin(ScrollTrigger);
@@ -15,12 +16,13 @@
       gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
       gsap.ticker.lagSmoothing(0);
     }
+    $$('.s-prod').forEach(function (im) { var ok = function () { im.classList.add('ld'); }; if (im.complete && im.naturalWidth) ok(); else im.addEventListener('load', ok); });
     var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
     var target = 0, cur = 0, active = -1;
-    var STEP = isMobile ? 85 : 95;                     // % viewport height of scroll per slide
+    var STEP = isMobile ? 120 : 150;                     // % viewport height of scroll per slide
     var st = ScrollTrigger.create({
       trigger: '#top', start: 'top top', end: '+=' + (STEP * (N - 1)) + '%', pin: '.stage-pin', anticipatePin: 1,
-      snap: { snapTo: 1 / (N - 1), duration: { min: .5, max: 1.1 }, delay: .04, ease: 'power2.inOut' },
+      snap: { snapTo: 1 / (N - 1), duration: { min: .9, max: 1.7 }, delay: .04, ease: 'power2.inOut' },
       onUpdate: function (s) { target = s.progress * (N - 1); },
       onToggle: function (s) { header.classList.toggle('on-stage', s.isActive); if (!s.isActive) document.body.classList.remove('light-hero'); }
     });
@@ -29,29 +31,29 @@
         var d = i - cur, el = slides[i], vis = d > -1.15 && d < 1.02;
         el.classList.toggle('vis', vis);
         if (!vis) continue;
-        var panel, wx, px, cx, rot, co;
+        var panel, wx, px, cx, rot, co, sc;
         if (d > 0) {                                     // entering from the right
-          panel = -d * 100; wx = -d * 34; px = d * 22; cx = -d * 12; rot = d * 7; co = clamp(1 - d * 1.6, 0, 1);
+          panel = -d * 100; wx = -d * 34; px = d * 22; cx = -d * 12; rot = d * 7; sc = 1 - clamp(d, 0, 1) * 0.22; co = clamp(1 - d * 1.6, 0, 1);
         } else {                                         // leaving to the left
-          panel = -d * 22; wx = -d * 9; px = -d * 34; cx = -d * 16; rot = d * 9; co = clamp(1 + d * 1.8, 0, 1);
+          panel = -d * 22; wx = -d * 9; px = -d * 34; cx = -d * 16; rot = d * 9; sc = 1 - clamp(-d, 0, 1) * 0.12; co = clamp(1 + d * 1.8, 0, 1);
         }
         el.style.transform = 'translate3d(0,' + panel + 'vh,0)';
         el.style.zIndex = i + 1;
         el.style.setProperty('--wx', wx); el.style.setProperty('--px', px); el.style.setProperty('--cx', cx);
-        el.style.setProperty('--rot', rot + 'deg'); el.style.setProperty('--co', co);
+        el.style.setProperty('--rot', rot + 'deg'); el.style.setProperty('--sc', sc); el.style.setProperty('--co', co);
       }
       var a = clamp(Math.round(cur), 0, N - 1);
       if (a !== active) {
         active = a;
         var ink = slides[a].dataset.ink;
         dots.forEach(function (dd, k) { dd.classList.toggle('on', k === a); dd.style.borderColor = ink; dd.style.background = k === a ? ink : 'transparent'; });
-        $('#stagePin').style.background = getComputedStyle(slides[a]).getPropertyValue('--bg');
+        $('#stageFrame').style.background = getComputedStyle(slides[a]).getPropertyValue('--bg');
         document.body.classList.toggle('light-hero', ink !== '#fff');
         var h = $('#hint'); if (h) h.style.opacity = a === 0 ? .85 : 0;
       }
     }
     gsap.ticker.add(function () {
-      cur += (target - cur) * (reduce ? 1 : 0.14);
+      cur += (target - cur) * (reduce ? 1 : 0.075);
       if (Math.abs(target - cur) < 0.0008) cur = target;
       render();
     });
@@ -69,6 +71,7 @@
         if (lenis) lenis.scrollTo(t, { offset: -70 }); else t.scrollIntoView({ behavior: 'smooth' });
       });
     });
+    cur = target = st.progress * (N - 1);
     render();
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
   }

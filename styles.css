@@ -704,3 +704,27 @@ body.light-hero .site-header.on-stage{color:var(--ink)}
 .s-prod{left:50%}
 .s-word{font-size:clamp(120px,21vw,400px)}
 @media(max-width:900px){.s-prod{top:52%}}
+
+/* ---- Hero v3: framed stage, liquid edge, slower ---- */
+.stage-pin{box-sizing:border-box;background:var(--paper);padding:clamp(76px,10vh,104px) clamp(14px,3vw,52px) clamp(14px,3vh,30px)}
+.stage-frame{position:relative;width:100%;height:100%;border-radius:clamp(20px,2.4vw,38px);overflow:hidden;background:#8a3fd1;box-shadow:0 24px 60px rgba(20,37,30,.18);isolation:isolate}
+.slide{overflow:visible}
+.slide::before{inset:0}
+.slide::after{content:"";position:absolute;left:0;right:0;bottom:calc(100% - 1px);height:min(16vh,150px);background:var(--bg);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'><path d='M0 120V70C120 20 240 20 360 66S600 112 720 66 960 14 1080 62 1320 108 1440 58V120Z'/></svg>") center bottom/100% 100% no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'><path d='M0 120V70C120 20 240 20 360 66S600 112 720 66 960 14 1080 62 1320 108 1440 58V120Z'/></svg>") center bottom/100% 100% no-repeat}
+.s-prod{transform:translate3d(-50%,calc(-50% + var(--px,0)*1vh),0) rotate(var(--rot,0deg)) scale(var(--sc,1));width:min(78vh,52vw,900px)}
+.s-word{font-size:clamp(110px,23vw,440px)}
+.s-card{inset-inline-end:clamp(18px,2vw,32px);inset-block-end:clamp(18px,3.4vh,34px);width:min(250px,21vw)}
+.arrow{inset-inline-end:clamp(16px,2vw,30px);inset-block-end:auto;top:clamp(16px,3vh,28px);width:46px;height:46px;font-size:28px;display:none}
+.dots{inset-inline-end:clamp(14px,1.6vw,26px)}
+.scrollhint{color:var(--ink);bottom:2px}
+.scrollhint i{background:linear-gradient(var(--ink),transparent)}
+.site-header.on-stage,body .site-header.on-stage{color:var(--ink) !important}
+.site-header.on-stage::after{display:none}
+@media(max-width:900px){
+  .stage-pin{padding:70px 10px 10px}
+  .s-prod{width:min(104vw,56vh)}
+  .s-card{inset-inline:12px;width:auto}
+}
+
+.s-prod{opacity:0;transition:opacity .7s ease}.s-prod.ld{opacity:1}
+@media(prefers-reduced-motion:reduce){.s-prod{opacity:1}}
