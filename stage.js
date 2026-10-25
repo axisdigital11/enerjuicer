@@ -1,4 +1,4 @@
-/* Hero: layered flavor slides that slide in horizontally as you scroll (depth via per-layer parallax). */
+/* Hero: layered flavor slides that drop in from above as you scroll (depth via per-layer parallax). */
 (function () {
   'use strict';
   function boot() {
@@ -31,11 +31,11 @@
         if (!vis) continue;
         var panel, wx, px, cx, rot, co;
         if (d > 0) {                                     // entering from the right
-          panel = d * 100; wx = d * 34; px = -d * 22; cx = d * 12; rot = d * 7; co = clamp(1 - d * 1.6, 0, 1);
+          panel = -d * 100; wx = -d * 34; px = d * 22; cx = -d * 12; rot = d * 7; co = clamp(1 - d * 1.6, 0, 1);
         } else {                                         // leaving to the left
-          panel = d * 22; wx = d * 9; px = d * 34; cx = d * 16; rot = d * 9; co = clamp(1 + d * 1.8, 0, 1);
+          panel = -d * 22; wx = -d * 9; px = -d * 34; cx = -d * 16; rot = d * 9; co = clamp(1 + d * 1.8, 0, 1);
         }
-        el.style.transform = 'translate3d(' + panel + 'vw,0,0)';
+        el.style.transform = 'translate3d(0,' + panel + 'vh,0)';
         el.style.zIndex = i + 1;
         el.style.setProperty('--wx', wx); el.style.setProperty('--px', px); el.style.setProperty('--cx', cx);
         el.style.setProperty('--rot', rot + 'deg'); el.style.setProperty('--co', co);
