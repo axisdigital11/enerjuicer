@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8A3FD1">
+  <meta name="description" content="ENERJUICER — שייקים, אסאי, מגשי פירות, שולחנות בוקר ופינוקים בלתי נשכחים לאירועי חברה. הופכים יום עבודה לרגע שכולם מדברים עליו.">
+  <title>ENERJUICER — אירועים שיש להם טעם</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/s1.png">
+  <link rel="preload" as="image" href="assets/fruit-sprites.webp">
+  <link rel="preload" as="image" href="assets/garnish-sprites.webp">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://axisdigital.co.il/enerjuicer/">
+  <meta property="og:type" content="website"><meta property="og:locale" content="he_IL"><meta property="og:title" content="ENERJUICER — אירועים שיש להם טעם"><meta property="og:description" content="שייקים, אסאי, מיצים סחוטים ומגשי פירות לאירועי חברה ומשרדים. אנחנו מגיעים, פורסים ומפנים.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"ENERJUICER אנרג'וסר","description":"דוכני אסאי, שייקים, מיצים סחוטים ומגשי פירות לאירועי חברה ומשרדים. כשר, Vegan Friendly, מעל 20 שנות ניסיון ו-6,000+ אירועים.","telephone":"+972-3-6018282","email":"enerjuicer.israel@gmail.com","url":"https://axisdigital.co.il/enerjuicer/","servesCuisine":["אסאי","שייקים","מיצים סחוטים","מגשי פירות"],"areaServed":"IL","sameAs":["https://www.instagram.com/enerjuicer_tlv"]}</script>
+  <script src="extras.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">דלגו לתוכן</a>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#top" aria-label="ENERJUICER — חזרה לראש האתר">
+      <svg class="brand-mark" viewBox="0 0 60 62" aria-hidden="true">
+        <path d="M6 30 15 51h22l8-27-31 1Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="m23 33 4-25 8-7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M15 38h23l-3 10H19Z" fill="#ffe331"/>
+        <path d="M43 16C46 5 53 7 57 6c0 13-7 18-15 15" fill="#42c56a" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M42 30c9-5 15-3 16 7-9 2-14-2-16-7" fill="#42c56a" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">ENER<span>JUICER</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="ניווט ראשי">
+      <a href="#experience">החוויה</a>
+      <a href="#menu">התפריט שלנו</a>
+      <a href="#events">אירועי חברה</a>
+      <a href="#how">איך זה עובד?</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="header-cta">בואו נפנק את העובדים <span aria-hidden="true">↖</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="ניווט במובייל" hidden>
+    <a href="#experience">החוויה</a>
+    <a href="#menu">התפריט שלנו</a>
+    <a href="#events">אירועי חברה</a>
+    <a href="#how">איך זה עובד?</a>
+    <a href="#contact">בואו נדבר ←</a>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top" aria-label="הכירו את אנרג'וסר">
+      <div class="hero-slide is-active" style="--slide-bg:#8A3FD1;--word-color:#4f2085;" data-slide="0" aria-hidden="false">
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> טרי. צבעוני. בלתי נשכח.</div>
+        <div class="giant-word" lang="en">AÇAÍ <span>WOW!</span></div>
+        <div class="acai-code-stage" aria-hidden="true">
+          <img class="acai-empty-bowl" src="assets/empty-acai.webp" alt="" fetchpriority="high">
+          <svg class="acai-liquid-world" viewBox="0 0 1254 1254" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="acai-bowl-interior"><path d="M 223 379 C 273 289 426 293 580 334 C 798 389 1066 550 1153 736 C 1169 770 1149 799 1105 814 C 905 806 710 694 528 608 C 376 536 240 460 223 379 Z"/></clipPath>
+              <linearGradient id="acai-thick-gradient" x1=".08" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#421043"/><stop offset=".28" stop-color="#8d225f"/><stop offset=".64" stop-color="#b64082"/><stop offset=".86" stop-color="#651448"/><stop offset="1" stop-color="#340f37"/></linearGradient>
+              <linearGradient id="acai-stream-gradient"><stop offset="0" stop-color="#3f0a42"/><stop offset=".23" stop-color="#8d205c"/><stop offset=".48" stop-color="#dc579c"/><stop offset=".7" stop-color="#851c5a"/><stop offset="1" stop-color="#390d3e"/></linearGradient>
+            </defs>
+            <g clip-path="url(#acai-bowl-interior)">
+              <path class="acai-fill-body" fill="url(#acai-thick-gradient)" d="M 88 455 Q 226 424 410 498 Q 585 544 749 629 Q 993 700 1226 812 L 1226 1110 L 88 1110 Z"/>
+              <path class="acai-surface-ripple" fill="none" stroke="#ed7eb0" stroke-width="13" stroke-linecap="round" opacity=".65" d="M 389 494 Q 559 520 708 616 Q 860 685 983 709"/>
+              <ellipse class="acai-impact-ripple" cx="666" cy="518" rx="93" ry="19" transform="rotate(25 666 518)" fill="none" stroke="#ef8abc" stroke-width="10" opacity="0"/>
+            </g>
+            <path class="acai-pour-stream" pathLength="1000" fill="none" stroke="url(#acai-stream-gradient)" stroke-width="52" stroke-linecap="round" stroke-linejoin="round" d="M 670 -118 C 712 -26 605 21 657 103 S 746 194 660 264 S 593 359 667 410 S 724 475 665 523"/>
+            <path class="acai-stream-highlight" pathLength="1000" fill="none" stroke="#f6a2ce" stroke-width="9" stroke-linecap="round" opacity=".53" d="M 654 -118 C 696 -26 589 21 641 103 S 730 194 644 264 S 577 359 651 410 S 708 475 649 523"/>
+            <path class="acai-landing-swirl" pathLength="1000" fill="none" stroke="url(#acai-stream-gradient)" stroke-width="35" stroke-linecap="round" d="M 665 520 C 709 536 739 558 705 573 C 668 591 587 552 620 526 C 650 502 719 517 748 540 C 787 568 738 600 687 608"/>
+            <g class="acai-splash-crown" fill="url(#acai-stream-gradient)"><path d="M615 538 Q577 477 593 473 Q613 464 641 509 Q619 452 638 448 Q659 448 664 504 Q676 458 692 463 Q709 468 688 518 Q741 483 749 500 Q751 519 707 548 Z"/></g>
+            <g class="acai-splash-drops" fill="#9d286a"><circle cx="567" cy="447" r="13"/><circle cx="765" cy="445" r="11"/><circle cx="713" cy="418" r="8"/><circle cx="602" cy="414" r="7"/><circle cx="782" cy="503" r="5"/><circle cx="546" cy="508" r="7"/></g>
+          </svg>
+          <img class="acai-final-bowl" src="assets/s1.png" alt="" loading="eager">
+        </div>
+        <div class="acai-drop-field" aria-hidden="true">
+          <span class="acai-drop-item drop-banana banana-a"></span>
+          <span class="acai-drop-item drop-strawberry berry-a"></span>
+          <span class="acai-drop-item drop-blueberry blueberry-a"></span>
+          <span class="acai-drop-item drop-granola granola-a"></span>
+          <span class="acai-drop-item drop-banana banana-b"></span>
+          <span class="acai-drop-item drop-blueberry blueberry-b"></span>
+          <span class="acai-drop-item drop-kiwi kiwi-a"></span>
+          <span class="acai-drop-item drop-strawberry berry-b"></span>
+          <span class="acai-drop-item drop-granola granola-b"></span>
+        </div>
+        <div class="slide-copy">
+          <span class="slide-label">01 / THE PURPLE MOMENT</span>
+          <h1>זה לא עוד<br><em>יום במשרד.</em></h1>
+          <p>זו ההפסקה שכולם ירצו להאריך.</p>
+          <a class="slide-link" href="#contact">בואו נעשה מזה אירוע <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>קערות אסאי</h3>
+          <p>אסאי עשיר עם פירות טריים, גרנולה וכל הדברים הטובים.</p>
+          <div class="flavor-card-bottom"><span>החל מ־20 ₪</span><a href="#menu" aria-label="גלו עוד על האסאי">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="--slide-bg:#FF7A9C;--word-color:#c63d62;" data-slide="1" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> מצב רוח טוב בכוס</div>
+        <div class="giant-word" lang="en">BERRY <span>HAPPY!</span></div>
+        <img class="hero-product" src="assets/s2.png" alt="שייק ורוד עם תותים ונתזי שייק באוויר" loading="lazy">
+        <div class="slide-copy">
+          <span class="slide-label">02 / THE HAPPY SIP</span>
+          <h2>יש שייקים.<br><em>ויש אנרג'וסר.</em></h2>
+          <p>טעמים שמקפיצים את האווירה בשנייה.</p>
+          <a class="slide-link" href="#contact">מתכננים Happy Hour <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>שייקים טריים</h3>
+          <p>טעמים מפנקים ומרעננים, מוגשים בדיוק לרגע הנכון.</p>
+          <div class="flavor-card-bottom"><span>החל מ־16 ₪</span><a href="#menu" aria-label="גלו עוד על השייקים">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="--slide-bg:#FFA21F;--word-color:#bd6900;" data-slide="2" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> כשהיום מתחיל אחרת</div>
+        <div class="giant-word" lang="en">FRESH <span>START!</span></div>
+        <img class="hero-product" src="assets/s3.png" alt="בקבוק מיץ תפוזים עם פלחי תפוז ונתזי מיץ" loading="lazy">
+        <div class="slide-copy">
+          <span class="slide-label">03 / THE BRIGHT SIDE</span>
+          <h2>קצת שמש.<br><em>הרבה אנרגיה.</em></h2>
+          <p>מיצים טבעיים שפותחים את היום בחיוך.</p>
+          <a class="slide-link" href="#contact">מרעננים את המשרד <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>מיצים טבעיים</h3>
+          <p>שילובים צבעוניים של פירות וירקות, בבקבוק אישי.</p>
+          <div class="flavor-card-bottom"><span>החל מ־16 ₪</span><a href="#menu" aria-label="גלו עוד על המיצים">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="--slide-bg:#6CC24A;--word-color:#398b34;" data-slide="3" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> ירוק זה לגמרי הסטייל</div>
+        <div class="giant-word" lang="en">GO <span>GREEN!</span></div>
+        <img class="hero-product" src="assets/s4.png" alt="בקבוק מיץ ירוק עם קיווי, תפוח, נענע וג'ינג'ר" loading="lazy">
+        <div class="slide-copy">
+          <span class="slide-label">04 / THE GREEN ENERGY</span>
+          <h2>הפסקה ירוקה.<br><em>אנרגיה חדשה.</em></h2>
+          <p>טבעי, מרענן ופשוט כיף.</p>
+          <a class="slide-link" href="#contact">מכניסים רעננות לצוות <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>הטעמים הירוקים</h3>
+          <p>מיצי פירות וירקות עשירים, בצבע שעושה חשק לעוד.</p>
+          <div class="flavor-card-bottom"><span>החל מ־16 ₪</span><a href="#menu" aria-label="גלו עוד על המיצים הירוקים">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="--slide-bg:#FFD23F;--word-color:#bd8711;" data-slide="4" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> הצבע הכי יפה באירוע</div>
+        <div class="giant-word" lang="en">FRUIT <span>PARTY!</span></div>
+        <img class="hero-product" src="assets/s5.png" alt="כוס פירות טריים עם אננס, מנגו, תות, קיווי ופסיפלורה" loading="lazy">
+        <div class="slide-copy">
+          <span class="slide-label">05 / THE COLORFUL SIDE</span>
+          <h2>לאכול צבע.<br><em>להרגיש וואו.</em></h2>
+          <p>מגשי פירות וכוסות אישיות שעושות את ההבדל.</p>
+          <a class="slide-link" href="#contact">מוסיפים צבע לאירוע <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>פירות באהבה</h3>
+          <p>פירות טריים חתוכים ומוגשים יפה, בדיוק כמו שצריך.</p>
+          <div class="flavor-card-bottom"><span>כוסות החל מ־12 ₪</span><a href="#menu" aria-label="גלו עוד על הפירות">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="--slide-bg:#49C9AC;--word-color:#168E76;" data-slide="5" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> בוקר טוב מתחיל כאן</div>
+        <div class="giant-word" lang="en">MUESLI <span>MAGIC!</span></div>
+        <img class="hero-product hero-product-muesli" src="assets/s6.png" alt="קערת מוזלי אנרג'וסר עם יוגורט, גרנולה, תותים, אוכמניות, בננות וקיווי באוויר" loading="lazy">
+        <div class="slide-copy">
+          <span class="slide-label">06 / THE MORNING MAGIC</span>
+          <h2>בוקר טוב.<br><em>ברמה אחרת.</em></h2>
+          <p>יוגורט, גרנולה, פירות טריים — והרבה מצב רוח טוב.</p>
+          <a class="slide-link" href="#contact">בואו לפתוח יום ביחד <span>↖</span></a>
+        </div>
+        <div class="flavor-card">
+          <div class="flavor-card-top"><span class="sparkle">✳</span><span>THE GOOD STUFF</span></div>
+          <h3>קערות מוזלי</h3>
+          <p>יוגורט קרמי, גרנולה פריכה ופירות טריים בכל ביס.</p>
+          <div class="flavor-card-bottom"><span>החל מ־20 ₪</span><a href="#menu" aria-label="גלו עוד על המוזלי">↗</a></div>
+        </div>
+      </div>
+
+      <div class="hero-slide hero-pack-slide" style="--slide-bg:#e9f2dd;--word-color:#c8dfa3;" data-slide="6" aria-hidden="true" inert>
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span> ENERJUICER / THE FULL EXPERIENCE</div>
+        <div class="giant-word" lang="en">GOOD <span>MOOD!</span></div>
+        <div class="pack-scene" aria-hidden="true">
+          <div class="pack-glow"></div>
+          <div class="pack-box-back"></div>
+          <div class="pack-items">
+            <img class="pack-item pack-item-1" src="assets/s1.png" alt="">
+            <img class="pack-item pack-item-2" src="assets/s2.png" alt="">
+            <img class="pack-item pack-item-3" src="assets/s3.png" alt="">
+            <img class="pack-item pack-item-4" src="assets/s4.png" alt="">
+            <img class="pack-item pack-item-5" src="assets/s5.png" alt="">
+            <img class="pack-item pack-item-6" src="assets/s6.png" alt="">
+          </div>
+          <div class="pack-box-front"><span class="pack-box-mark">✳</span><strong>ENER<span>JUICER</span></strong><small>GOOD FOOD. GOOD MOOD.</small></div>
+          <div class="pack-confetti">✳ ✦ ✳</div>
+        </div>
+        <div class="pack-copy"><span>07 / ALL THE GOOD STUFF</span><h2>כל הטוב.<br><em>במקום אחד.</em></h2><p>אסאי, שייקים, מיצים, מוזלי ופירות — הכל מתחבר לחוויה אחת צבעונית שמגיעה אליכם.</p><a href="#menu">גלו את הקטלוג המלא ↙</a></div>
+        <span class="pack-stage-label">THE PERFECT OFFICE BREAK / 100% GOOD VIBES</span>
+      </div>
+
+      <div class="hero-sparkles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+      <div class="hero-controls" aria-label="מעבר בין סוגי מוצרים">
+        <button class="hero-arrow hero-prev" id="heroPrev" aria-label="למוצר הקודם">→</button>
+        <button class="hero-arrow hero-next" id="heroNext" aria-label="למוצר הבא">←</button>
+      </div>
+      <div class="hero-bottom-bar">
+        <span class="hero-slide-number"><strong id="activeSlideNumber">01</strong><span>/ 07</span></span>
+        <div class="hero-dots-wrap">
+          <div class="hero-dots" role="tablist" aria-label="בחירת מוצר">
+            <button class="hero-dot is-active" data-goto="0" aria-label="אסאי" aria-selected="true"></button>
+            <button class="hero-dot" data-goto="1" aria-label="שייקים" aria-selected="false"></button>
+            <button class="hero-dot" data-goto="2" aria-label="מיצים" aria-selected="false"></button>
+            <button class="hero-dot" data-goto="3" aria-label="ירוק" aria-selected="false"></button>
+            <button class="hero-dot" data-goto="4" aria-label="פירות" aria-selected="false"></button>
+            <button class="hero-dot" data-goto="5" aria-label="מוזלי" aria-selected="false"></button>
+            <button class="hero-dot" data-goto="6" aria-label="כל המוצרים יחד" aria-selected="false"></button>
+          </div>
+          <button class="replay-animation" id="replayAnimation" aria-label="הפעילו שוב את אנימציית המנה" title="רוצים לראות שוב?">↻ <span>עוד פעם!</span></button>
+        </div>
+        <a href="#experience" class="scroll-indicator"><span class="scroll-mouse" aria-hidden="true"><i></i></span><span id="heroScrollLabel">גללו לגלות את הטעם הבא</span><span class="scroll-arrow" aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-edge" aria-hidden="true">GOOD FOOD. GOOD MOOD. GOOD PEOPLE.</div>
+    </section>
+
+    <div class="ticker" aria-label="טעמים שעושים טוב">
+      <div class="ticker-track" aria-hidden="true">
+        <span>FRESH VIBES ONLY</span><i>✳</i><span>משנים את הטעם של יום העבודה</span><i>✳</i><span>GOOD MOOD FOOD</span><i>✳</i><span>שייקים • אסאי • מוזלי • פירות • ועוד</span><i>✳</i>
+        <span>FRESH VIBES ONLY</span><i>✳</i><span>משנים את הטעם של יום העבודה</span><i>✳</i><span>GOOD MOOD FOOD</span><i>✳</i><span>שייקים • אסאי • מוזלי • פירות • ועוד</span><i>✳</i>
+      </div>
+    </div>
+
+    <section class="intro-section" id="experience">
+      <div class="section-topline reveal"><span class="tiny-star">✳</span> יותר מסתם כיבוד <span>01 — THE EXPERIENCE</span></div>
+      <div class="intro-grid">
+        <div class="intro-main reveal">
+          <p class="micro-label">מכירים את הרגע הזה?</p>
+          <h2>פתאום כל המשרד<br><span class="highlight-swipe">מחייך.</span></h2>
+        </div>
+        <div class="intro-side reveal">
+          <p>יש ימים שפשוט צריך לעצור הכל לכמה דקות, להוציא את כולם מהשגרה — ולהכניס קצת צבע, טעם ואנרגיה.</p>
+          <p><strong>בדיוק בשביל זה אנחנו כאן.</strong> אנרג'וסר מביאים למשרד שלכם חוויית אירוח טעימה, צבעונית ומוקפדת, שהעובדים באמת נהנים ממנה.</p>
+          <a class="underline-link" href="#events">תראו איך אנחנו עושים את זה <span>↖</span></a>
+        </div>
+      </div>
+      <div class="value-row">
+        <div class="value-item reveal"><span class="value-icon">01</span><div><h3>מגיעים עד אליכם</h3><p>הפינוק מגיע למשרד או למקום האירוע.</p></div></div>
+        <div class="value-item reveal"><span class="value-icon">02</span><div><h3>מתאימים לכל רגע</h3><p>בוקר חברה, Happy Hour, אירוע צוות או הרמת כוסית.</p></div></div>
+        <div class="value-item reveal"><span class="value-icon">03</span><div><h3>לא רק טעים. גם נראה מדהים.</h3><p>הגשה צבעונית שמרימה את כל האווירה.</p></div></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="menu-heading reveal">
+        <div><span class="section-kicker light"><span class="dot"></span> THE MENU</span><h2>כל כך הרבה<br><em>מה לאהוב.</em></h2></div>
+        <div class="menu-heading-side"><p>מהביס הראשון ועד השלוק האחרון — תפריט מלא ברגעים טעימים. הנה רק טעימה קטנה.</p><a class="outlined-link" href="#contact">מרכיבים לכם אירוע ↖</a></div>
+      </div>
+      <div class="menu-filter" role="group" aria-label="סינון התפריט">
+        <button class="filter-button active" data-filter="all" aria-pressed="true">הכל <span>06</span></button>
+        <button class="filter-button" data-filter="drink" aria-pressed="false">משקאות</button>
+        <button class="filter-button" data-filter="bowl" aria-pressed="false">קערות</button>
+        <button class="filter-button" data-filter="fruit" aria-pressed="false">פירות</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+        <article class="menu-card menu-card-purple reveal" data-category="bowl">
+          <span class="menu-card-index">01 / AÇAÍ</span><img src="assets/s1.png" alt="קערת אסאי" loading="lazy">
+          <div class="menu-card-info"><div><h3>אסאי שעושה שמח</h3><p>קערות אסאי עם פירות ותוספות</p></div><span>מ־20 ₪</span></div>
+        </article>
+        <article class="menu-card menu-card-pink reveal" data-category="drink">
+          <span class="menu-card-index">02 / SMOOTHIES</span><img src="assets/s2.png" alt="שייק פירות ורוד" loading="lazy">
+          <div class="menu-card-info"><div><h3>שייקים טריים</h3><p>טעמים וצבעים שפשוט כיף לשתות</p></div><span>מ־16 ₪</span></div>
+        </article>
+        <article class="menu-card menu-card-orange reveal" data-category="drink">
+          <span class="menu-card-index">03 / JUICES</span><img src="assets/s3.png" alt="בקבוק מיץ טבעי" loading="lazy">
+          <div class="menu-card-info"><div><h3>מיצים טבעיים</h3><p>שילובים מרעננים של פירות וירקות</p></div><span>מ־16 ₪</span></div>
+        </article>
+        <article class="menu-card menu-card-green reveal" data-category="drink">
+          <span class="menu-card-index">04 / GREEN GOODNESS</span><img src="assets/s4.png" alt="מיץ ירוק עם פירות" loading="lazy">
+          <div class="menu-card-info"><div><h3>הצד הירוק</h3><p>קיווי, תפוח, נענע ועוד שילובים</p></div><span>מ־16 ₪</span></div>
+        </article>
+        <article class="menu-card menu-card-yellow reveal" data-category="fruit">
+          <span class="menu-card-index">05 / FRUITS</span><img src="assets/s5.png" alt="כוס פירות צבעונית" loading="lazy">
+          <div class="menu-card-info"><div><h3>פירות בכל צורה</h3><p>כוסות אישיות ומגשים מרהיבים</p></div><span>מ־12 ₪</span></div>
+        </article>
+        <article class="menu-card menu-card-mint reveal" data-category="bowl">
+          <span class="menu-card-index">06 / MUESLI</span><img src="assets/s6.png" alt="קערת מוזלי יוגורט וגרנולה עם פירות טריים" loading="lazy">
+          <div class="menu-card-info"><div><h3>מוזלי של בוקר טוב</h3><p>יוגורט, גרנולה ופירות טריים</p></div><span>מ־20 ₪</span></div>
+        </article>
+      </div>
+      <div class="menu-extra reveal">
+        <div class="extra-heading"><span>AND THERE'S MORE</span><h3>וזה ממש לא הכל.</h3></div>
+        <div class="extra-items">
+          <div><span>🍉</span><strong>מגשי פירות</strong><small>מ־149 ₪ למגש</small></div>
+          <div><span>🥐</span><strong>שולחנות בוקר</strong><small>מ־48 ₪ למשתתף</small></div>
+          <div><span>🍲</span><strong>עמדות מרקים</strong><small>מ־47 ₪ למשתתף</small></div>
+          <div><span>🧀</span><strong>גבינות וקינוחים</strong><small>בהתאמה לאירוע</small></div>
+        </div>
+        <p class="price-note">* מחירי דוגמה מתוך הקטלוג, לפני מע״מ. מחירי מנות אישיות, מגשים ועמדות מתייחסים ליחידות ומינימום הזמנה שונים. שילוח, זמינות והרכב התפריט בהתאם להצעת המחיר הסופית.</p>
+      </div>
+    </section>
+
+    <section class="event-showcase" id="events">
+      <div class="event-photo" role="img" aria-label="בופה אנרג'וסר צבעוני באירוע חברה"></div>
+      <div class="event-shade"></div>
+      <div class="event-content reveal">
+        <span class="section-kicker light"><span class="dot"></span> BRING THE GOOD VIBES</span>
+        <h2>הם באו<br>לעבודה.<br><em>יצאו עם חיוך.</em></h2>
+        <p>אנחנו מביאים את החוויה עד אליכם — מהשייק הראשון ועד הביס האחרון. אתם בוחרים את הסיבה לחגוג; אנחנו דואגים שיהיה טעים, יפה ובלתי נשכח.</p>
+        <a class="white-pill-link" href="#contact">בואו נתכנן רגע כזה <span>↖</span></a>
+      </div>
+      <span class="event-image-caption">AN ENERJUICER KIND OF DAY / 2026</span>
+    </section>
+
+    <section class="occasions-section">
+      <div class="occasions-head reveal"><span class="section-kicker dark"><span class="dot"></span> FOR EVERY OCCASION</span><h2>כל סיבה היא<br><em>סיבה לפנק.</em></h2><p>לא משנה מה חוגגים, תמיד אפשר לעשות את זה קצת יותר טעים.</p></div>
+      <div class="occasions-cards">
+        <article class="occasion-card occasion-one reveal"><span class="occasion-number">01</span><span class="occasion-icon">☀</span><h3>בוקר חברה</h3><p>פותחים את היום עם שייקים, קערות, מגשי פירות, גבינות ומאפים.</p><a href="#contact" aria-label="לתכנון בוקר חברה">↗</a></article>
+        <article class="occasion-card occasion-two reveal"><span class="occasion-number">02</span><span class="occasion-icon">✺</span><h3>Happy Hour</h3><p>הפסקה צבעונית שעושה חשק לעזוב את האקסל לכמה דקות.</p><a href="#contact" aria-label="לתכנון Happy Hour">↗</a></article>
+        <article class="occasion-card occasion-three reveal"><span class="occasion-number">03</span><span class="occasion-icon">✳</span><h3>ימי צוות ואירועים</h3><p>הרמות כוסית, אירועי חברה וחוויית אירוח בהתאמה אישית.</p><a href="#contact" aria-label="לתכנון יום צוות">↗</a></article>
+      </div>
+    </section>
+
+    <section class="steps-section" id="how">
+      <div class="steps-heading reveal"><span class="section-kicker light"><span class="dot"></span> SUPER SIMPLE</span><h2>אנחנו דואגים<br>לכל ה<em>טעים.</em></h2></div>
+      <div class="steps-grid">
+        <div class="step reveal"><span class="step-number">01</span><div class="step-line"></div><h3>מספרים לנו על האירוע</h3><p>מתי, איפה, כמה משתתפים ומה האווירה שאתם מחפשים.</p></div>
+        <div class="step reveal"><span class="step-number">02</span><div class="step-line"></div><h3>בוחרים את התפריט</h3><p>מרכיבים יחד שילוב טעים שמתאים לצוות ולסוג האירוע.</p></div>
+        <div class="step reveal"><span class="step-number">03</span><div class="step-line"></div><h3>נותנים לקסם לקרות</h3><p>אנרג'וסר מגיעים עם כל הטוב — והעובדים פשוט נהנים.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-orbit orbit-one" aria-hidden="true">✳</div><div class="contact-orbit orbit-two" aria-hidden="true">✺</div>
+      <div class="contact-head reveal">
+        <span class="section-kicker dark"><span class="dot"></span> LET'S MAKE IT HAPPEN</span>
+        <h2>אז... מתי מפנקים<br><em>את העובדים?</em></h2>
+        <p>ספרו לנו קצת על האירוע שלכם, ונכין יחד משהו שיהיה קשה לשכוח.</p>
+      </div>
+      <div class="contact-panel reveal">
+        <div class="contact-panel-aside"><span>LET'S TALK!</span><div class="contact-aside-art">☺</div><h3>האירוע הבא<br>שלכם הולך להיות<br><em>משהו מיוחד.</em></h3><p>הטופס כרגע במצב הדגמה. אפשר להכין ולהעתיק בקשה מסודרת — ולאחר חיבור פרטי הקשר הוא יהפוך לערוץ פנייה ישיר.</p></div>
+        <form class="contact-form" id="eventForm">
+          <div class="form-top"><span class="form-star">✳</span><h3>בונים אירוע טעים</h3><p>כמה פרטים קטנים ומתחילים</p></div>
+          <div class="form-row">
+            <label>איך קוראים לך?<input name="name" type="text" placeholder="השם שלך" required autocomplete="name"></label>
+            <label>שם החברה<input name="company" type="text" placeholder="איפה חוגגים?" required autocomplete="organization"></label>
+          </div>
+          <div class="form-row">
+            <label>מספר טלפון<input name="phone" type="tel" placeholder="050-000-0000" required autocomplete="tel"></label>
+            <label>מספר משתתפים<input name="guests" type="number" min="10" max="10000" value="50" required></label>
+          </div>
+          <label>מה מתכננים?
+            <select name="occasion" required>
+              <option value="בוקר חברה">בוקר חברה ☀</option>
+              <option value="Happy Hour">Happy Hour ✳</option>
+              <option value="יום צוות / אירוע חברה">יום צוות / אירוע חברה</option>
+              <option value="הרמת כוסית">הרמת כוסית</option>
+              <option value="משהו אחר">משהו אחר לגמרי</option>
+            </select>
+          </label>
+          <label>מה עוד כדאי שנדע?<textarea name="notes" rows="3" placeholder="תאריך, מיקום, טעמים שאוהבים..."></textarea></label>
+          <button type="submit" class="form-submit">הכינו לי בקשה מסודרת <span>↖</span></button>
+          <p class="form-note">לא נשלחים פרטים מהאתר במצב הדגמה. בתום המילוי תופיע בקשה להעתקה.</p>
+          <div class="form-result" id="formResult" hidden aria-live="polite">
+            <strong>הבקשה שלכם מוכנה ✨</strong>
+            <p>העתיקו אותה כדי לשלוח לאנרג'וסר כשנחבר את פרטי הקשר.</p>
+            <textarea id="requestText" readonly rows="6"></textarea>
+            <button type="button" class="copy-request" id="copyRequest">העתיקו את פרטי הבקשה</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><a href="#top" class="footer-brand">ENER<span>JUICER</span><small>GOOD FOOD. GOOD MOOD.</small></a><p>מוזיקה טובה. אנשים טובים. אוכל שעושה טוב.<br>אנרג'וסר — כי גם באמצע יום עבודה, מגיע לכם רגע טעים.</p><a class="footer-back" href="#top">בחזרה למעלה ↑</a></div>
+    <div class="footer-bottom"><span>© 2026 ENERJUICER. כל הזכויות שמורות.</span><span>נבנה באהבה, עם הרבה צבע ואנרגיה.</span></div>
+  </footer>
+<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=11132201&fmt=gif"></noscript>
+</body>
+</html>
